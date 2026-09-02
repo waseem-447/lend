@@ -1,0 +1,160 @@
+/* ========== Fonts ========== */
+@font-face {
+    font-family: 'DG Agnadeen';
+    src: url('DGAgnadeen-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('BebasNeue-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ========== Reset ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========== Body ========== */
+body {
+    min-height: 100vh;
+    background-image: url('MenuBG.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* ========== Logo ========== */
+.logo-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 10;
+}
+
+.logo {
+    width: min(350px, 60vw);
+    height: min(350px, 60vw);
+    object-fit: contain;
+    display: block;
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ========== Welcome Message ========== */
+.welcome-message {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 0;
+    transition: all 1s ease;
+    z-index: 5;
+    width: 90%;
+    max-width: 500px;
+    padding: 0 15px;
+}
+
+.welcome-title {
+    font-family: 'DG Agnadeen', sans-serif;
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 700;
+    color: #E9E0D0;
+    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 12px;
+}
+
+.welcome-text {
+    font-family: 'DG Agnadeen', sans-serif;
+    font-size: clamp(18px, 3vw, 28px);
+    font-weight: 400;
+    color: #E9E0D0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+}
+
+/* ========== Options Buttons ========== */
+.options-container {
+    display: flex;
+    gap: clamp(15px, 3vw, 25px);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.option-btn {
+    font-family: 'DG Agnadeen', sans-serif;
+    font-size: clamp(18px, 2.5vw, 24px);
+    font-weight: 600;
+    color: #E9E0D0;
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid #E9E0D0;
+    border-radius: 50px;
+    padding: clamp(14px, 2vw, 18px) clamp(30px, 5vw, 50px);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+    letter-spacing: 0.5px;
+    min-width: clamp(130px, 20vw, 170px);
+}
+
+.option-btn:hover {
+    background: #E9E0D0;
+    color: #1a1a1a;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.option-btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* ========== Tablet ========== */
+@media (max-width: 768px) {
+    .logo {
+        width: min(280px, 50vw);
+        height: min(280px, 50vw);
+    }
+
+    .welcome-message {
+        top: 58%;
+    }
+}
+
+/* ========== Mobile ========== */
+@media (max-width: 480px) {
+    .logo {
+        width: min(220px, 55vw);
+        height: min(220px, 55vw);
+    }
+
+    .welcome-message {
+        top: 60%;
+    }
+
+    .options-container {
+        gap: 12px;
+    }
+
+    .option-btn {
+        min-width: 120px;
+        padding: 12px 25px;
+    }
+}

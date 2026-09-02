@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LendMenu - Menu</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="LendPoint.png">
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="menu-header">
+        <button class="back-btn" onclick="goHome()">
+            <span class="back-arrow">→</span>
+            <span class="back-text">الرئيسية</span>
+        </button>
+        <img src="LendLogo.png" alt="LendLogo" class="menu-logo">
+    </header>
+
+    <!-- Main Content -->
+    <main class="menu-content">
+
+        <!-- Hot Drinks Section -->
+        <div class="menu-section">
+            <button class="section-toggle" id="hotToggle">
+                <span class="section-title">المشروبات الساخنة</span>
+                <span class="section-arrow" id="hotArrow">▼</span>
+            </button>
+
+            <!-- Products Grid (8 Squares) -->
+            <div class="section-items" id="hotItems">
+                <div class="products-grid">
+                    
+                    <!-- Product Card 1 -->
+                    <div class="product-square" onclick="openPoster('poster1')">
+                        <img src="CoffeeMenuCard2.png" alt="Product 1" class="product-square-img">
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="product-square" onclick="openPoster('poster2')">
+                        <img src="CoffeeMenuCard2C.png" alt="Product 2" class="product-square-img">
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="product-square" onclick="openPoster('poster3')">
+                        <img src="CoffeeMenuCard2E.png" alt="Product 3" class="product-square-img">
+                    </div>
+
+                    <!-- Product Card 4 -->
+                    <div class="product-square" onclick="openPoster('poster4')">
+                        <img src="CoffeeMenuCardL2.png" alt="Product 4" class="product-square-img">
+                    </div>
+
+                    <!-- Product Card 5 -->
+                    <div class="product-square" onclick="openPoster('poster5')">
+                        <img src="CoffeeMenuCard2CO.png" alt="Product 5" class="product-square-img">
+                    </div>
+
+                    <!-- Product Card 6 -->
+                    <div class="product-square" onclick="openPoster('poster6')">
+                        <img src="CoffeeMenuCard2H.png" alt="Product 6" class="product-square-img">
+                    </div>
+
+                    <!-- Product Card 7 -->
+                    <div class="product-square" onclick="openPoster('poster7')">
+                        <img src="CoffeeMenuCard2V.png" alt="Product 7" class="product-square-img">
+                    </div>
+
+                    <!-- Product Card 8 -->
+                    <div class="product-square" onclick="openPoster('poster8')">
+                        <img src="CoffeeMenuCard2F.png" alt="Product 8" class="product-square-img">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Cold Drinks Section -->
+        <div class="menu-section">
+            <button class="section-toggle" id="coldToggle">
+                <span class="section-title">المشروبات الباردة</span>
+                <span class="section-arrow" id="coldArrow">▼</span>
+            </button>
+
+            <!-- Products Grid (10 Squares) -->
+            <div class="section-items" id="coldItems">
+                <div class="products-grid">
+                    
+                    <!-- Product Card 1 -->
+                    <div class="product-square" onclick="openPoster('poster9')">
+                        <img src="CoffeeMenuCard2B.png" alt="Product 1" class="product-square-img">
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="product-square" onclick="openPoster('poster10')">
+                        <img src="CoffeeMenuCardS2.png" alt="Product 2" class="product-square-img">
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="product-square" onclick="openPoster('poster11')">
+                        <img src="CoffeeMenuCard2M.png" alt="Product 3" class="product-square-img">
+                    </div>
+
+                    <!-- Product Card 4 -->
+                    <div class="product-square" onclick="openPoster('poster12')">
+                        <img src="CoffeeMenuCard2K.png" alt="Product 4" class="product-square-img">
+                    </div>
+
+                    <!-- Product Card 5 -->
+                    <div class="product-square" onclick="openPoster('poster13')">
+                        <img src="CoffeeMenuCard2P.png" alt="Product 5" class="product-square-img">
+                    </div>
+
+                    <!-- Product Card 6 -->
+                    <div class="product-square" onclick="openPoster('poster14')">
+                        <img src="CoffeeMenuCardCH2.png" alt="Product 6" class="product-square-img">
+                    </div>
+
+                    <!-- Product Card 7 -->
+                    <div class="product-square" onclick="openPoster('poster15')">
+                        <img src="CoffeeMenuCardID2.png" alt="Product 7" class="product-square-img">
+                    </div>
+
+                    <!-- Product Card 8 -->
+                    <div class="product-square" onclick="openPoster('poster16')">
+                        <img src="CoffeeMenuCardIL2.png" alt="Product 8" class="product-square-img">
+                    </div>
+
+                    <!-- Product Card 9 -->
+                    <div class="product-square" onclick="openPoster('poster17')">
+                        <img src="CoffeeMenuCardSG2.png" alt="Product 9" class="product-square-img">
+                    </div>
+
+                    <!-- Product Card 10 -->
+                    <div class="product-square" onclick="openPoster('poster18')">
+                        <img src="CoffeeMenuCardFR2.png" alt="Product 10" class="product-square-img">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== Footer Note ========== -->
+        <div class="footer-note">
+            <p class="footer-ar">
+                يحتاج البالغون إلى ٢٠٠٠ سعرة حرارية في المتوسط يوميًا، والأطفال إلى ١٢٠٠ سعرة حرارية يوميًا، وقد تختلف الاحتياجات الفردية من السعرات الحرارية من شخص لآخر.
+                تتوفر معلومات غذائية إضافية عند الطلب. جميع الأسعار شاملة ضريبة القيمة المضافة ١٥٪.
+            </p>
+            <p class="footer-en">
+                Adults require 2,000 calories per day on average, children average 1,200 calories, and individual calorie needs may vary from person to person.
+                Additional nutritional information is available upon request. All prices include 15% VAT.
+            </p>
+        </div>
+
+    </main>
+
+    <!-- ========== Fullscreen Poster Overlay ========== -->
+    <div class="poster-overlay" id="posterOverlay" onclick="closePoster(event)">
+        <div class="poster-overlay-content">
+            
+            <!-- Poster 1 -->
+            <div class="poster-full" id="poster1" style="display: none;">
+                <div class="poster-vertical" id="fullPoster1">
+                    <img src="CoffeeMenuCard.png" alt="Poster Background" class="poster-bg-vertical">
+                    <img src="CoffeeCup.png" alt="Coffee Cup" class="poster-cup-vertical" id="cup1">
+                </div>
+                <button class="close-btn" onclick="closePoster(event)">✕</button>
+            </div>
+
+            <!-- Poster 2 -->
+            <div class="poster-full" id="poster2" style="display: none;">
+                <div class="poster-vertical" id="fullPoster2">
+                    <img src="CoffeeMenuCardC.png" alt="Poster Background" class="poster-bg-vertical">
+                    <img src="CoffeeCupC.png" alt="Coffee Cup" class="poster-cup-vertical" id="cup2">
+                </div>
+                <button class="close-btn" onclick="closePoster(event)">✕</button>
+            </div>
+
+            <!-- Poster 3 -->
+            <div class="poster-full" id="poster3" style="display: none;">
+                <div class="poster-vertical" id="fullPoster3">
+                    <img src="CoffeeMenuCardE.png" alt="Poster Background" class="poster-bg-vertical">
+                    <img src="CoffeeCupE.png" alt="Coffee Cup" class="poster-cup-vertical" id="cup3">
+                </div>
+                <button class="close-btn" onclick="closePoster(event)">✕</button>
+            </div>
+
+            <!-- Poster 4 -->
+            <div class="poster-full" id="poster4" style="display: none;">
+                <div class="poster-vertical" id="fullPoster4">
+                    <img src="CoffeeMenuCardL.png" alt="Poster Background" class="poster-bg-vertical">
+                    <img src="CoffeeCupL.png" alt="Coffee Cup" class="poster-cup-vertical" id="cup4">
+                </div>
+                <button class="close-btn" onclick="closePoster(event)">✕</button>
+            </div>
+
+            <!-- Poster 5 -->
+            <div class="poster-full" id="poster5" style="display: none;">
+                <div class="poster-vertical" id="fullPoster5">
+                    <img src="CoffeeMenuCardCO.png" alt="Poster Background" class="poster-bg-vertical">
+                    <img src="CoffeeCupCO.png" alt="Coffee Cup" class="poster-cup-vertical" id="cup5">
+                </div>
+                <button class="close-btn" onclick="closePoster(event)">✕</button>
+            </div>
+
+            <!-- Poster 6 -->
+            <div class="poster-full" id="poster6" style="display: none;">
+                <div class="poster-vertical" id="fullPoster6">
+                    <img src="CoffeeMenuCardH.png" alt="Poster Background" class="poster-bg-vertical">
+                    <img src="CoffeeCupH.png" alt="Coffee Cup" class="poster-cup-vertical" id="cup6">
+                </div>
+                <button class="close-btn" onclick="closePoster(event)">✕</button>
+            </div>
+
+            <!-- Poster 7 -->
+            <div class="poster-full" id="poster7" style="display: none;">
+                <div class="poster-vertical" id="fullPoster7">
+                    <img src="CoffeeMenuCardV.png" alt="Poster Background" class="poster-bg-vertical">
+                    <img src="CoffeeCup.png" alt="Coffee Cup" class="poster-cup-vertical" id="cup7">
+                </div>
+                <button class="close-btn" onclick="closePoster(event)">✕</button>
+            </div>
+
+            <!-- Poster 8 -->
+            <div class="poster-full" id="poster8" style="display: none;">
+                <div class="poster-vertical" id="fullPoster8">
+                    <img src="CoffeeMenuCardF.png" alt="Poster Background" class="poster-bg-vertical">
+                    <img src="CoffeeCupF.png" alt="Coffee Cup" class="poster-cup-vertical" id="cup8">
+                </div>
+                <button class="close-btn" onclick="closePoster(event)">✕</button>
+            </div>
+
+            <!-- Poster 9 - Cold 1 -->
+            <div class="poster-full" id="poster9" style="display: none;">
+                <div class="poster-vertical" id="fullPoster9">
+                    <img src="CoffeeMenuCardB.png" alt="Poster Background" class="poster-bg-vertical">
+                    <img src="CoffeeCupB.png" alt="Coffee Cup" class="poster-cup-vertical" id="cup9">
+                </div>
+                <button class="close-btn" onclick="closePoster(event)">✕</button>
+            </div>
+
+            <!-- Poster 10 - Cold 2 -->
+            <div class="poster-full" id="poster10" style="display: none;">
+                <div class="poster-vertical" id="fullPoster10">
+                    <img src="CoffeeMenuCardS.png" alt="Poster Background" class="poster-bg-vertical">
+                    <img src="CoffeeCupS.png" alt="Coffee Cup" class="poster-cup-vertical" id="cup10">
+                </div>
+                <button class="close-btn" onclick="closePoster(event)">✕</button>
+            </div>
+
+            <!-- Poster 11 - Cold 3 -->
+            <div class="poster-full" id="poster11" style="display: none;">
+                <div class="poster-vertical" id="fullPoster11">
+                    <img src="CoffeeMenuCardM.png" alt="Poster Background" class="poster-bg-vertical">
+                    <img src="CoffeeCupM.png" alt="Coffee Cup" class="poster-cup-vertical" id="cup11">
+                </div>
+                <button class="close-btn" onclick="closePoster(event)">✕</button>
+            </div>
+
+            <!-- Poster 12 - Cold 4 -->
+            <div class="poster-full" id="poster12" style="display: none;">
+                <div class="poster-vertical" id="fullPoster12">
+                    <img src="CoffeeMenuCardK.png" alt="Poster Background" class="poster-bg-vertical">
+                    <img src="CoffeeCupK.png" alt="Coffee Cup" class="poster-cup-vertical" id="cup12">
+                </div>
+                <button class="close-btn" onclick="closePoster(event)">✕</button>
+            </div>
+
+            <!-- Poster 13 - Cold 5 -->
+            <div class="poster-full" id="poster13" style="display: none;">
+                <div class="poster-vertical" id="fullPoster13">
+                    <img src="CoffeeMenuCardP.png" alt="Poster Background" class="poster-bg-vertical">
+                    <img src="CoffeeCupP.png" alt="Coffee Cup" class="poster-cup-vertical" id="cup13">
+                </div>
+                <button class="close-btn" onclick="closePoster(event)">✕</button>
+            </div>
+
+            <!-- Poster 14 - Cold 6 -->
+            <div class="poster-full" id="poster14" style="display: none;">
+                <div class="poster-vertical" id="fullPoster14">
+                    <img src="CoffeeMenuCardCH.png" alt="Poster Background" class="poster-bg-vertical">
+                    <img src="CoffeeCupCH.png" alt="Coffee Cup" class="poster-cup-vertical" id="cup14">
+                </div>
+                <button class="close-btn" onclick="closePoster(event)">✕</button>
+            </div>
+
+            <!-- Poster 15 - Cold 7 -->
+            <div class="poster-full" id="poster15" style="display: none;">
+                <div class="poster-vertical" id="fullPoster15">
+                    <img src="CoffeeMenuCardID.png" alt="Poster Background" class="poster-bg-vertical">
+                    <img src="CoffeeCupID.png" alt="Coffee Cup" class="poster-cup-vertical" id="cup15">
+                </div>
+                <button class="close-btn" onclick="closePoster(event)">✕</button>
+            </div>
+
+            <!-- Poster 16 - Cold 8 -->
+            <div class="poster-full" id="poster16" style="display: none;">
+                <div class="poster-vertical" id="fullPoster16">
+                    <img src="CoffeeMenuCardIL.png" alt="Poster Background" class="poster-bg-vertical">
+                    <img src="CoffeeCupIL.png" alt="Coffee Cup" class="poster-cup-vertical" id="cup16">
+                </div>
+                <button class="close-btn" onclick="closePoster(event)">✕</button>
+            </div>
+
+            <!-- Poster 17 - Cold 9 -->
+            <div class="poster-full" id="poster17" style="display: none;">
+                <div class="poster-vertical" id="fullPoster17">
+                    <img src="CoffeeMenuCardSG.png" alt="Poster Background" class="poster-bg-vertical">
+                    <img src="CoffeeCupSG.png" alt="Coffee Cup" class="poster-cup-vertical" id="cup17">
+                </div>
+                <button class="close-btn" onclick="closePoster(event)">✕</button>
+            </div>
+
+            <!-- Poster 18 - Cold 10 -->
+            <div class="poster-full" id="poster18" style="display: none;">
+                <div class="poster-vertical" id="fullPoster18">
+                    <img src="CoffeeMenuCardFR.png" alt="Poster Background" class="poster-bg-vertical">
+                    <img src="CoffeeCupFR.png" alt="Coffee Cup" class="poster-cup-vertical" id="cup18">
+                </div>
+                <button class="close-btn" onclick="closePoster(event)">✕</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LendMenu - Dessert</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="LendPoint.png">
+    <link rel="stylesheet" href="dessert.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="menu-header">
+        <button class="back-btn" onclick="goHome()">
+            <span class="back-arrow">→</span>
+            <span class="back-text">الرئيسية</span>
+        </button>
+        <img src="LendLogo.png" alt="LendLogo" class="menu-logo">
+    </header>
+
+    <!-- Main Content -->
+    <main class="menu-content">
+
+        <!-- Dessert Products (Visible Directly) -->
+        <div class="dessert-products">
+            <div class="products-grid">
+                
+                <!-- Product Card 1 -->
+                <div class="product-square" onclick="openPoster('poster1')">
+                    <img src="DessertMenuCardP2.png" alt="Dessert 1" class="product-square-img">
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product-square" onclick="openPoster('poster2')">
+                    <img src="DessertMenuCardCH2.png" alt="Dessert 2" class="product-square-img">
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ========== Footer Note ========== -->
+        <div class="footer-note">
+            <p class="footer-ar">
+                يحتاج البالغون إلى ٢٠٠٠ سعرة حرارية في المتوسط يوميًا، والأطفال إلى ١٢٠٠ سعرة حرارية يوميًا، وقد تختلف الاحتياجات الفردية من السعرات الحرارية من شخص لآخر.
+                تتوفر معلومات غذائية إضافية عند الطلب. جميع الأسعار شاملة ضريبة القيمة المضافة ١٥٪.
+            </p>
+            <p class="footer-en">
+                Adults require 2,000 calories per day on average, children average 1,200 calories, and individual calorie needs may vary from person to person.
+                Additional nutritional information is available upon request. All prices include 15% VAT.
+            </p>
+        </div>
+
+    </main>
+
+    <!-- ========== Fullscreen Poster Overlay ========== -->
+    <div class="poster-overlay" id="posterOverlay" onclick="closePoster(event)">
+        <div class="poster-overlay-content">
+            
+            <!-- Poster 1 -->
+            <div class="poster-full" id="poster1" style="display: none;">
+                <div class="poster-vertical" id="fullPoster1">
+                    <img src="DessertMenuCardP.png" alt="Dessert Poster" class="poster-bg-vertical">
+                </div>
+                <button class="close-btn" onclick="closePoster(event)">✕</button>
+            </div>
+
+            <!-- Poster 2 -->
+            <div class="poster-full" id="poster2" style="display: none;">
+                <div class="poster-vertical" id="fullPoster2">
+                    <img src="DessertMenuCardCH.png" alt="Dessert Poster" class="poster-bg-vertical">
+                </div>
+                <button class="close-btn" onclick="closePoster(event)">✕</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="dessert.js"></script>
+</body>
+</html>
