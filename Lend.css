@@ -90,14 +90,17 @@ body {
     margin-bottom: 30px;
 }
 
-/* ========== Options Buttons ========== */
+/* ========== Options Container ========== */
 .options-container {
     display: flex;
+    flex-wrap: wrap;
     gap: clamp(15px, 3vw, 25px);
     justify-content: center;
-    flex-wrap: wrap;
+    width: 100%;
+    max-width: 500px;
 }
 
+/* ========== Option Buttons ========== */
 .option-btn {
     font-family: 'DG Agnadeen', sans-serif;
     font-size: clamp(18px, 2.5vw, 24px);
@@ -112,6 +115,8 @@ body {
     backdrop-filter: blur(10px);
     letter-spacing: 0.5px;
     min-width: clamp(130px, 20vw, 170px);
+    flex: 1 1 auto;
+    max-width: 200px;
 }
 
 .option-btn:hover {
@@ -126,6 +131,13 @@ body {
     box-shadow: none;
 }
 
+/* ========== Full Width Buttons ========== */
+.option-btn-full {
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-width: 100%;
+}
+
 /* ========== Tablet ========== */
 @media (max-width: 768px) {
     .logo {
@@ -135,6 +147,10 @@ body {
 
     .welcome-message {
         top: 58%;
+    }
+
+    .option-btn {
+        max-width: 180px;
     }
 }
 
@@ -156,5 +172,11 @@ body {
     .option-btn {
         min-width: 120px;
         padding: 12px 25px;
+        max-width: 150px;
+    }
+
+    .option-btn-full {
+        min-width: 100%;
+        max-width: 100%;
     }
 }

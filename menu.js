@@ -23,6 +23,17 @@ document.addEventListener('DOMContentLoaded', () => {
         coldArrow.classList.toggle('open');
     });
 
+    const refreshmentsToggle = document.getElementById('refreshmentsToggle');
+    const refreshmentsItems = document.getElementById('refreshmentsItems');
+    const refreshmentsArrow = document.getElementById('refreshmentsArrow');
+
+    if (refreshmentsToggle) {
+        refreshmentsToggle.addEventListener('click', () => {
+            refreshmentsItems.classList.toggle('open');
+            refreshmentsArrow.classList.toggle('open');
+        });
+    }
+
     // ========== Draggable Cups ==========
     initDraggableCup('fullPoster1', 'cup1');
     initDraggableCup('fullPoster2', 'cup2');

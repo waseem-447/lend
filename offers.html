@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LendMenu - Offers</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="LendPoint.png">
+    <link rel="stylesheet" href="offers.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="menu-header">
+        <button class="back-btn" onclick="goHome()">
+            <span class="back-arrow">→</span>
+            <span class="back-text">الرئيسية</span>
+        </button>
+        <img src="LendLogo.png" alt="LendLogo" class="menu-logo">
+    </header>
+
+    <!-- Main Content -->
+    <main class="menu-content">
+
+        <!-- Offers Products -->
+        <div class="offers-products">
+            <div class="products-grid">
+                
+                <!-- Offer Card 1 - Flip -->
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="9.png" alt="Offer 9" class="product-img">
+                        </div>
+                        <div class="flip-card-back">
+                            <img src="9back.png" alt="Offer 9 Back" class="product-img">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Offer Card 2 - Flip -->
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="6.png" alt="Offer 6" class="product-img">
+                        </div>
+                        <div class="flip-card-back">
+                            <img src="6back.png" alt="Offer 6 Back" class="product-img">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ========== Footer Note ========== -->
+        <div class="footer-note">
+            <p class="footer-ar">
+                يحتاج البالغون إلى ٢٠٠٠ سعرة حرارية في المتوسط يوميًا، والأطفال إلى ١٢٠٠ سعرة حرارية يوميًا، وقد تختلف الاحتياجات الفردية من السعرات الحرارية من شخص لآخر.
+                تتوفر معلومات غذائية إضافية عند الطلب. جميع الأسعار شاملة ضريبة القيمة المضافة ١٥٪.
+            </p>
+            <p class="footer-en">
+                Adults require 2,000 calories per day on average, children average 1,200 calories, and individual calorie needs may vary from person to person.
+                Additional nutritional information is available upon request. All prices include 15% VAT.
+            </p>
+        </div>
+
+    </main>
+
+    <script src="offers.js"></script>
+</body>
+</html>

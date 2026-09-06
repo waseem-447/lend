@@ -80,6 +80,8 @@ function showWelcomeMessage() {
         <div class="options-container">
             <button class="option-btn" id="coffeeBtn">قهوة</button>
             <button class="option-btn" id="dessertBtn">حلا</button>
+            <button class="option-btn option-btn-full" id="gatheringBtn">الجمعات</button>
+            <button class="option-btn option-btn-full" id="offersBtn">عروض الشهر</button>
         </div>
     `;
 
@@ -99,6 +101,8 @@ function showWelcomeMessage() {
 
     const coffeeBtn = document.getElementById('coffeeBtn');
     const dessertBtn = document.getElementById('dessertBtn');
+    const gatheringBtn = document.getElementById('gatheringBtn');
+    const offersBtn = document.getElementById('offersBtn');
 
     coffeeBtn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -122,5 +126,29 @@ function showWelcomeMessage() {
         e.stopPropagation();
         e.preventDefault();
         window.location.href = 'dessert.html';
+    }, { passive: false });
+
+    gatheringBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        window.location.href = 'gathering.html';
+    });
+
+    gatheringBtn.addEventListener('touchstart', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        window.location.href = 'gathering.html';
+    }, { passive: false });
+
+    offersBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        window.location.href = 'offers.html';
+    });
+
+    offersBtn.addEventListener('touchstart', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        window.location.href = 'offers.html';
     }, { passive: false });
 }

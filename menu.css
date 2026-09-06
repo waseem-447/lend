@@ -196,6 +196,95 @@ body {
     user-select: none;
 }
 
+/* ========== Milk Options ========== */
+.milk-options {
+    margin-top: 25px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid #E9E0D0;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.milk-title-ar {
+    font-family: 'DG Agnadeen', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #E9E0D0;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.milk-title-en {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #E9E0D0;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
+.milk-options-list,
+.milk-options-list-en {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.milk-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+}
+
+.milk-name {
+    font-family: 'DG Agnadeen', sans-serif;
+    font-size: 16px;
+    color: #E9E0D0;
+}
+
+.milk-options-list-en .milk-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.milk-price {
+    font-family: 'DG Agnadeen', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #E9E0D0;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+/* ========== Riyal Icon ========== */
+.riyal-img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    vertical-align: middle;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* ========== Refreshments ========== */
+.refreshments-section {
+    margin-top: 20px;
+}
+
+.refreshments-toggle {
+    width: 100%;
+}
+
 /* ========== Footer Note ========== */
 .footer-note {
     margin-top: 30px;
