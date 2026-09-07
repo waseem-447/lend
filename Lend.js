@@ -13,33 +13,8 @@ const welcomeMessages = [
 // ========== State ==========
 let welcomeShown = false;
 
-// ========== Logo Animation ==========
+// ========== Click / Touch ==========
 window.addEventListener('DOMContentLoaded', () => {
-    const logo = document.querySelector('.logo');
-    const logoContainer = document.querySelector('.logo-container');
-
-    if (logo && logoContainer) {
-        logo.style.opacity = '0';
-        logo.style.transform = 'scale(0.3) rotate(-15deg)';
-        logo.style.filter = 'blur(12px)';
-        logo.style.transition = 'all 1.2s cubic-bezier(0.16, 1, 0.3, 1)';
-
-        setTimeout(() => {
-            logo.style.opacity = '1';
-            logo.style.transform = 'scale(1) rotate(0deg)';
-            logo.style.filter = 'blur(0)';
-
-            setTimeout(() => {
-                logo.style.transition = 'transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
-                logo.style.transform = 'scale(0.95)';
-
-                setTimeout(() => {
-                    logo.style.transform = 'scale(1)';
-                }, 400);
-            }, 1200);
-        }, 200);
-    }
-
     document.body.addEventListener('click', handleBodyInteraction);
     document.body.addEventListener('touchstart', handleBodyInteraction, { passive: true });
 });
@@ -53,19 +28,56 @@ function handleBodyInteraction(e) {
 }
 
 function goToWelcome() {
+    const posterWrapper = document.getElementById('posterWrapper');
     const logoContainer = document.querySelector('.logo-container');
     const logo = document.querySelector('.logo');
 
-    if (!logoContainer || !logo) return;
+    if (!posterWrapper || !logoContainer || !logo) return;
 
-    logo.style.width = '130px';
-    logo.style.height = '130px';
-    logoContainer.style.top = '100px';
-    logoContainer.style.transform = 'translate(-50%, 0)';
+    // إخفاء البوستر بنعومة
+    posterWrapper.style.opacity = '0';
+    posterWrapper.style.transition = 'opacity 0.8s ease';
+
+    // إظهار الخلفية الأصلية
+    document.body.style.backgroundImage = "url('MenuBG.jpeg')";
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundPosition = 'center';
+    document.body.style.backgroundRepeat = 'no-repeat';
+
+    // إظهار اللوجو
+    logoContainer.style.opacity = '1';
+
+    // أنيميشن اللوجو
+    logo.style.opacity = '0';
+    logo.style.transform = 'scale(0.3) rotate(-15deg)';
+    logo.style.filter = 'blur(12px)';
+    logo.style.transition = 'all 1.2s cubic-bezier(0.16, 1, 0.3, 1)';
 
     setTimeout(() => {
-        showWelcomeMessage();
-    }, 500);
+        logo.style.opacity = '1';
+        logo.style.transform = 'scale(1) rotate(0deg)';
+        logo.style.filter = 'blur(0)';
+
+        setTimeout(() => {
+            logo.style.transition = 'transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            logo.style.transform = 'scale(0.95)';
+
+            setTimeout(() => {
+                logo.style.transform = 'scale(1)';
+
+                setTimeout(() => {
+                    logo.style.width = '130px';
+                    logo.style.height = '130px';
+                    logoContainer.style.top = '100px';
+                    logoContainer.style.transform = 'translate(-50%, 0)';
+
+                    setTimeout(() => {
+                        showWelcomeMessage();
+                    }, 500);
+                }, 500);
+            }, 400);
+        }, 1200);
+    }, 200);
 }
 
 function showWelcomeMessage() {
@@ -78,10 +90,9 @@ function showWelcomeMessage() {
         <h2 class="welcome-title">${randomMessage}</h2>
         <p class="welcome-text">ايش حاب تطلب اليوم؟</p>
         <div class="options-container">
+            <button class="option-btn" id="dessertBtn">الحلويات</button>
             <button class="option-btn" id="coffeeBtn">قهوة</button>
-            <button class="option-btn" id="dessertBtn">حلا</button>
             <button class="option-btn option-btn-full" id="gatheringBtn">الجمعات</button>
-            <button class="option-btn option-btn-full" id="offersBtn">عروض الشهر</button>
         </div>
     `;
 
@@ -102,7 +113,6 @@ function showWelcomeMessage() {
     const coffeeBtn = document.getElementById('coffeeBtn');
     const dessertBtn = document.getElementById('dessertBtn');
     const gatheringBtn = document.getElementById('gatheringBtn');
-    const offersBtn = document.getElementById('offersBtn');
 
     coffeeBtn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -138,17 +148,5 @@ function showWelcomeMessage() {
         e.stopPropagation();
         e.preventDefault();
         window.location.href = 'gathering.html';
-    }, { passive: false });
-
-    offersBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        e.preventDefault();
-        window.location.href = 'offers.html';
-    });
-
-    offersBtn.addEventListener('touchstart', (e) => {
-        e.stopPropagation();
-        e.preventDefault();
-        window.location.href = 'offers.html';
     }, { passive: false });
 }

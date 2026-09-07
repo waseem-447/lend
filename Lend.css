@@ -38,6 +38,59 @@ body {
     cursor: pointer;
 }
 
+/* ========== Blur Overlay ========== */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ========== Poster Wrapper ========== */
+.poster-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(98vw, 600px);
+    height: min(96vh, 900px);
+    z-index: 2;
+    border-radius: 15px;
+    box-shadow: 0 0 40px 15px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    transition: opacity 0.8s ease;
+}
+
+.poster-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    box-shadow: inset 0 0 30px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+}
+
+.poster-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
 /* ========== Logo ========== */
 .logo-container {
     position: absolute;
@@ -47,6 +100,7 @@ body {
     text-align: center;
     transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 10;
+    opacity: 0;
 }
 
 .logo {
@@ -131,7 +185,7 @@ body {
     box-shadow: none;
 }
 
-/* ========== Full Width Buttons ========== */
+/* ========== Full Width Button ========== */
 .option-btn-full {
     flex: 1 1 100%;
     max-width: 100%;
@@ -140,6 +194,17 @@ body {
 
 /* ========== Tablet ========== */
 @media (max-width: 768px) {
+    .poster-wrapper {
+        width: min(100vw, 600px);
+        height: min(100vh, 900px);
+        border-radius: 0;
+    }
+
+    .poster-wrapper::before {
+        border-radius: 0;
+        box-shadow: inset 0 0 20px 5px rgba(0, 0, 0, 0.4);
+    }
+
     .logo {
         width: min(280px, 50vw);
         height: min(280px, 50vw);
@@ -156,6 +221,17 @@ body {
 
 /* ========== Mobile ========== */
 @media (max-width: 480px) {
+    .poster-wrapper {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .poster-wrapper::before {
+        border-radius: 0;
+        box-shadow: inset 0 0 15px 3px rgba(0, 0, 0, 0.3);
+    }
+
     .logo {
         width: min(220px, 55vw);
         height: min(220px, 55vw);

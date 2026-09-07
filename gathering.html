@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LendMenu - Gathering</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="LendPoint.png">
+    <link rel="icon" type="image/svg+xml" href="lend.svg">
     <link rel="stylesheet" href="gathering.css">
 </head>
 <body>
@@ -15,17 +15,41 @@
             <span class="back-arrow">→</span>
             <span class="back-text">الرئيسية</span>
         </button>
-        <img src="LendLogo.png" alt="LendLogo" class="menu-logo">
+        <img src="lend.svg" alt="LendLogo" class="menu-logo">
     </header>
 
     <!-- Main Content -->
     <main class="menu-content">
 
-        <!-- Gathering Products (Visible Directly) -->
+        <!-- Gathering Products -->
         <div class="gathering-products">
             <div class="products-grid">
                 
-                <!-- Product Card 1 - Flip -->
+                <!-- Flip Card 1 -->
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="FamilyCoffeeBox.png" alt="Family Coffee Box" class="product-img">
+                        </div>
+                        <div class="flip-card-back">
+                            <img src="FamilyCoffeeBox2.png" alt="Family Coffee Box Back" class="product-img">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flip Card 2 -->
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="FamilyCookiesBox.png" alt="Family Cookies Box" class="product-img">
+                        </div>
+                        <div class="flip-card-back">
+                            <img src="FamilyCookiesBox2.png" alt="Family Cookies Box Back" class="product-img">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flip Card 3 -->
                 <div class="flip-card" onclick="flipCard(this)">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
@@ -35,16 +59,6 @@
                             <img src="Gathering-box-(cookies-&-coffee)2.png" alt="Gathering Box Back" class="product-img">
                         </div>
                     </div>
-                </div>
-
-                <!-- Product Card 2 - Static -->
-                <div class="static-card">
-                    <img src="FamilyCookiesBox.png" alt="Family Cookies" class="product-img">
-                </div>
-
-                <!-- Product Card 3 - Static -->
-                <div class="static-card">
-                    <img src="FamilyCoffeeBox.png" alt="Family Coffee" class="product-img">
                 </div>
 
             </div>
