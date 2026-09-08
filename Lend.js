@@ -37,14 +37,11 @@ function goToWelcome() {
 
     if (!posterWrapper || !logoContainer || !logo) return;
 
-    // إخفاء البوستر بنعومة
     posterWrapper.style.opacity = '0';
     posterWrapper.style.transition = 'opacity 0.8s ease';
 
-    // إظهار اللوجو
     logoContainer.style.opacity = '1';
 
-    // أنيميشن اللوجو
     logo.style.opacity = '0';
     logo.style.transform = 'scale(0.3) rotate(-15deg)';
     logo.style.filter = 'blur(12px)';
@@ -63,14 +60,22 @@ function goToWelcome() {
                 logo.style.transform = 'scale(1)';
 
                 setTimeout(() => {
-                    // حجم أصغر للوجو على الجوال
                     const isMobile = window.innerWidth <= 480;
-                    const logoSize = isMobile ? '70px' : '130px';
+                    const isTablet = window.innerWidth > 480 && window.innerWidth <= 768;
+                    
+                    let logoSize = '130px';
+                    let topPosition = '100px';
+                    
+                    if (isMobile) {
+                        logoSize = '45px';
+                        topPosition = '8px';
+                    } else if (isTablet) {
+                        logoSize = '80px';
+                        topPosition = '50px';
+                    }
                     
                     logo.style.width = logoSize;
                     logo.style.height = logoSize;
-                    
-                    const topPosition = isMobile ? '40px' : '100px';
                     logoContainer.style.top = topPosition;
                     logoContainer.style.transform = 'translate(-50%, 0)';
 

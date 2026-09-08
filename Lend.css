@@ -115,8 +115,8 @@ body::before {
 
 /* ========== Welcome Message ========== */
 .welcome-message {
-    position: absolute;
-    top: 55%;
+    position: fixed;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -274,10 +274,6 @@ body::before {
         width: min(75vw, 500px);
         max-height: min(85vh, 750px);
     }
-
-    .welcome-message {
-        top: 58%;
-    }
 }
 
 /* ========== Mobile Large ========== */
@@ -288,37 +284,46 @@ body::before {
     }
 
     .welcome-message {
-        top: 62%;
+        top: 55%;
     }
 
     .welcome-title {
-        font-size: clamp(24px, 4vw, 32px);
+        font-size: clamp(20px, 5vw, 26px);
     }
 
     .welcome-text {
-        font-size: clamp(16px, 2.5vw, 20px);
-        margin-bottom: 20px;
+        font-size: clamp(14px, 3vw, 18px);
+        margin-bottom: 15px;
     }
 
     .options-container {
-        gap: 10px;
+        gap: 8px;
     }
 
     .option-btn {
-        min-width: 120px;
-        padding: 10px 20px;
-        font-size: 16px;
-        max-width: 150px;
+        min-width: 100px;
+        padding: 10px 15px;
+        font-size: 14px;
+        max-width: 140px;
+    }
+
+    .option-btn-full {
+        min-width: 100%;
+        max-width: 100%;
     }
 
     .pre-order-text {
-        margin-top: 15px;
-        font-size: 13px;
+        margin-top: 12px;
+        font-size: 11px;
     }
 
     .contact-btn {
-        margin-top: 12px;
-        padding: 10px 20px;
+        margin-top: 10px;
+        padding: 8px 15px;
+    }
+
+    .contact-number {
+        font-size: 13px;
     }
 }
 
@@ -330,40 +335,45 @@ body::before {
     }
 
     .welcome-message {
-        top: 65%;
+        top: 55%;
     }
 
     .welcome-title {
-        font-size: clamp(20px, 3.5vw, 28px);
+        font-size: clamp(18px, 4.5vw, 24px);
     }
 
     .welcome-text {
-        font-size: clamp(14px, 2vw, 18px);
-        margin-bottom: 15px;
+        font-size: clamp(12px, 2.5vw, 16px);
+        margin-bottom: 12px;
     }
 
     .options-container {
-        gap: 8px;
+        gap: 6px;
     }
 
     .option-btn {
-        min-width: 100px;
-        padding: 8px 15px;
-        font-size: 14px;
-        max-width: 130px;
+        min-width: 90px;
+        padding: 8px 10px;
+        font-size: 12px;
+        max-width: 120px;
+    }
+
+    .option-btn-full {
+        min-width: 100%;
+        max-width: 100%;
     }
 
     .pre-order-text {
-        margin-top: 12px;
-        font-size: 12px;
+        margin-top: 10px;
+        font-size: 10px;
     }
 
     .contact-btn {
-        margin-top: 10px;
-        padding: 8px 15px;
+        margin-top: 8px;
+        padding: 7px 12px;
     }
 
     .contact-number {
-        font-size: 14px;
+        font-size: 12px;
     }
 }
