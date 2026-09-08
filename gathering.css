@@ -134,11 +134,14 @@ body::before {
 
 /* ========== Flip Card ========== */
 .flip-card {
+    position: relative;
     width: 100%;
     aspect-ratio: 1 / 1;
     cursor: pointer;
     perspective: 1200px;
     -webkit-perspective: 1200px;
+    isolation: isolate; /* يمنع تراكب طبقات الفليب مع الكروت المجاورة */
+    z-index: 0;
 }
 
 .flip-card-inner {
