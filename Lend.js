@@ -10,6 +10,9 @@ const welcomeMessages = [
     'مرحباً في لند'
 ];
 
+// ========== Pre-order Message (Fixed) ==========
+const preOrderMessage = 'لا تنتظر — اطلب وأنت بالطريق';
+
 // ========== State ==========
 let welcomeShown = false;
 
@@ -37,12 +40,6 @@ function goToWelcome() {
     // إخفاء البوستر بنعومة
     posterWrapper.style.opacity = '0';
     posterWrapper.style.transition = 'opacity 0.8s ease';
-
-    // إظهار الخلفية الأصلية
-    document.body.style.backgroundImage = "url('MenuBG.jpeg')";
-    document.body.style.backgroundSize = 'cover';
-    document.body.style.backgroundPosition = 'center';
-    document.body.style.backgroundRepeat = 'no-repeat';
 
     // إظهار اللوجو
     logoContainer.style.opacity = '1';
@@ -94,6 +91,10 @@ function showWelcomeMessage() {
             <button class="option-btn" id="coffeeBtn">قهوة</button>
             <button class="option-btn option-btn-full" id="gatheringBtn">الجمعات</button>
         </div>
+        <p class="pre-order-text">${preOrderMessage}</p>
+        <a href="tel:0566040575" class="contact-btn">
+            <span class="contact-number">0566040575</span>
+        </a>
     `;
 
     document.body.appendChild(welcomeDiv);
