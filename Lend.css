@@ -187,7 +187,7 @@ body::before {
     box-shadow: none;
 }
 
-/* ========== Full Width Button ========== */
+/* ========== Full Width Button (الجمعات) ========== */
 .option-btn-full {
     flex: 1 1 100%;
     max-width: 100%;
@@ -284,7 +284,7 @@ body::before {
     }
 
     .welcome-message {
-        top: 55%;
+        top: 50%;
     }
 
     .welcome-title {
@@ -335,7 +335,7 @@ body::before {
     }
 
     .welcome-message {
-        top: 55%;
+        top: 50%;
     }
 
     .welcome-title {

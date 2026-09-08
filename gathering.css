@@ -189,9 +189,17 @@ body::before {
     -webkit-user-drag: none;
 }
 
-/* ========== Hover Effect ========== */
-.flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
+/* ========== Hover Effect (Desktop/mouse only) ==========
+   IMPORTANT FIX: This is wrapped in a (hover: hover) and (pointer: fine)
+   media query so it ONLY applies to devices with a real mouse.
+   On touch devices, mobile browsers simulate a ":hover" state on tap,
+   which was conflicting with the JS-driven ".flipped" class and causing
+   the card to get stuck or behave randomly when tapped. Restricting this
+   rule to real mouse devices lets the JS fully control the flip on mobile. */
+@media (hover: hover) and (pointer: fine) {
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
 }
 
 /* ========== Footer Note ========== */
