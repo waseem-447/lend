@@ -63,9 +63,15 @@ function goToWelcome() {
                 logo.style.transform = 'scale(1)';
 
                 setTimeout(() => {
-                    logo.style.width = '130px';
-                    logo.style.height = '130px';
-                    logoContainer.style.top = '100px';
+                    // حجم أصغر للوجو على الجوال
+                    const isMobile = window.innerWidth <= 480;
+                    const logoSize = isMobile ? '70px' : '130px';
+                    
+                    logo.style.width = logoSize;
+                    logo.style.height = logoSize;
+                    
+                    const topPosition = isMobile ? '40px' : '100px';
+                    logoContainer.style.top = topPosition;
                     logoContainer.style.transform = 'translate(-50%, 0)';
 
                     setTimeout(() => {
