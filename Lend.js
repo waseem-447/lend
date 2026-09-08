@@ -99,7 +99,7 @@ function showWelcomeMessage() {
         <p class="welcome-text">ايش حاب تطلب اليوم؟</p>
         <div class="options-container">
             <button class="option-btn" id="dessertBtn">الحلويات</button>
-            <button class="option-btn" id="coffeeBtn">قهوة</button>
+            <button class="option-btn" id="coffeeBtn">القهوة</button>
             <button class="option-btn option-btn-full" id="gatheringBtn">الجمعات</button>
         </div>
         <p class="pre-order-text">${preOrderMessage}</p>
