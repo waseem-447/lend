@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LendMenu - Menu</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="LendPoint.png">
+    <link rel="icon" type="image/svg+xml" href="lend.svg">
     <link rel="stylesheet" href="menu.css">
 </head>
 <body>
+
+    <!-- Language Button -->
+    <button class="lang-btn" id="langBtn">EN</button>
 
     <!-- Header -->
     <header class="menu-header">
         <button class="back-btn" onclick="goHome()">
             <span class="back-arrow">→</span>
-            <span class="back-text">الرئيسية</span>
+            <span class="back-text" id="backText">الرئيسية</span>
         </button>
-        <img src="LendLogo.png" alt="LendLogo" class="menu-logo">
+        <img src="lend.svg" alt="LendLogo" class="menu-logo">
     </header>
 
     <!-- Main Content -->
@@ -24,11 +27,10 @@
         <!-- Hot Drinks Section -->
         <div class="menu-section">
             <button class="section-toggle" id="hotToggle">
-                <span class="section-title">المشروبات الساخنة</span>
+                <span class="section-title" id="hotTitle">المشروبات الساخنة</span>
                 <span class="section-arrow" id="hotArrow">▼</span>
             </button>
 
-            <!-- Products Grid (8 Squares) -->
             <div class="section-items" id="hotItems">
                 <div class="products-grid">
                     
@@ -76,33 +78,18 @@
 
                 <!-- Milk Options -->
                 <div class="milk-options">
-                    <h3 class="milk-title-ar">إضافة أنواع الحليب للمشروبات</h3>
+                    <h3 class="milk-title-ar" id="milkTitle">إضافة أنواع الحليب للمشروبات</h3>
                     <div class="milk-options-list">
                         <div class="milk-option">
-                            <span class="milk-name">حليب خالي من اللاكتوز</span>
+                            <span class="milk-name" id="milk1">حليب خالي من اللاكتوز</span>
                             <span class="milk-price">3 <img src="Saudi_Riyal_Symbol.png" alt="ريال" class="riyal-img"></span>
                         </div>
                         <div class="milk-option">
-                            <span class="milk-name">حليب جوز الهند</span>
+                            <span class="milk-name" id="milk2">حليب جوز الهند</span>
                             <span class="milk-price">3 <img src="Saudi_Riyal_Symbol.png" alt="ريال" class="riyal-img"></span>
                         </div>
                         <div class="milk-option">
-                            <span class="milk-name">حليب اللوز</span>
-                            <span class="milk-price">3 <img src="Saudi_Riyal_Symbol.png" alt="ريال" class="riyal-img"></span>
-                        </div>
-                    </div>
-                    <h4 class="milk-title-en">Milk Options</h4>
-                    <div class="milk-options-list-en">
-                        <div class="milk-option">
-                            <span class="milk-name">Lactose-free milk</span>
-                            <span class="milk-price">3 <img src="Saudi_Riyal_Symbol.png" alt="ريال" class="riyal-img"></span>
-                        </div>
-                        <div class="milk-option">
-                            <span class="milk-name">Coconut milk</span>
-                            <span class="milk-price">3 <img src="Saudi_Riyal_Symbol.png" alt="ريال" class="riyal-img"></span>
-                        </div>
-                        <div class="milk-option">
-                            <span class="milk-name">Almond milk</span>
+                            <span class="milk-name" id="milk3">حليب اللوز</span>
                             <span class="milk-price">3 <img src="Saudi_Riyal_Symbol.png" alt="ريال" class="riyal-img"></span>
                         </div>
                     </div>
@@ -113,11 +100,10 @@
         <!-- Cold Drinks Section -->
         <div class="menu-section">
             <button class="section-toggle" id="coldToggle">
-                <span class="section-title">المشروبات الباردة</span>
+                <span class="section-title" id="coldTitle">المشروبات الباردة</span>
                 <span class="section-arrow" id="coldArrow">▼</span>
             </button>
 
-            <!-- Products Grid (10 Squares) -->
             <div class="section-items" id="coldItems">
                 <div class="products-grid">
                     
@@ -175,42 +161,27 @@
 
                 <!-- Milk Options -->
                 <div class="milk-options">
-                    <h3 class="milk-title-ar">إضافة أنواع الحليب للمشروبات</h3>
+                    <h3 class="milk-title-ar" id="milkTitleCold">إضافة أنواع الحليب للمشروبات</h3>
                     <div class="milk-options-list">
                         <div class="milk-option">
-                            <span class="milk-name">حليب خالي من اللاكتوز</span>
+                            <span class="milk-name" id="milk1Cold">حليب خالي من اللاكتوز</span>
                             <span class="milk-price">3 <img src="Saudi_Riyal_Symbol.png" alt="ريال" class="riyal-img"></span>
                         </div>
                         <div class="milk-option">
-                            <span class="milk-name">حليب جوز الهند</span>
+                            <span class="milk-name" id="milk2Cold">حليب جوز الهند</span>
                             <span class="milk-price">3 <img src="Saudi_Riyal_Symbol.png" alt="ريال" class="riyal-img"></span>
                         </div>
                         <div class="milk-option">
-                            <span class="milk-name">حليب اللوز</span>
-                            <span class="milk-price">3 <img src="Saudi_Riyal_Symbol.png" alt="ريال" class="riyal-img"></span>
-                        </div>
-                    </div>
-                    <h4 class="milk-title-en">Milk Options</h4>
-                    <div class="milk-options-list-en">
-                        <div class="milk-option">
-                            <span class="milk-name">Lactose-free milk</span>
-                            <span class="milk-price">3 <img src="Saudi_Riyal_Symbol.png" alt="ريال" class="riyal-img"></span>
-                        </div>
-                        <div class="milk-option">
-                            <span class="milk-name">Coconut milk</span>
-                            <span class="milk-price">3 <img src="Saudi_Riyal_Symbol.png" alt="ريال" class="riyal-img"></span>
-                        </div>
-                        <div class="milk-option">
-                            <span class="milk-name">Almond milk</span>
+                            <span class="milk-name" id="milk3Cold">حليب اللوز</span>
                             <span class="milk-price">3 <img src="Saudi_Riyal_Symbol.png" alt="ريال" class="riyal-img"></span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Refreshments -->
+                <!-- Drinks -->
                 <div class="refreshments-section">
                     <button class="section-toggle refreshments-toggle" id="refreshmentsToggle">
-                        <span class="section-title">مرطبات</span>
+                        <span class="section-title" id="drinksTitle">مشروبات</span>
                         <span class="section-arrow" id="refreshmentsArrow">▼</span>
                     </button>
                     <div class="section-items" id="refreshmentsItems">
@@ -317,7 +288,7 @@
                 <button class="close-btn" onclick="closePoster(event)">✕</button>
             </div>
 
-            <!-- Poster 9 - Cold 1 -->
+            <!-- Poster 9 -->
             <div class="poster-full" id="poster9" style="display: none;">
                 <div class="poster-vertical" id="fullPoster9">
                     <img src="CoffeeMenuCardB.png" alt="Poster Background" class="poster-bg-vertical">
@@ -326,7 +297,7 @@
                 <button class="close-btn" onclick="closePoster(event)">✕</button>
             </div>
 
-            <!-- Poster 10 - Cold 2 -->
+            <!-- Poster 10 -->
             <div class="poster-full" id="poster10" style="display: none;">
                 <div class="poster-vertical" id="fullPoster10">
                     <img src="CoffeeMenuCardS.png" alt="Poster Background" class="poster-bg-vertical">
@@ -335,7 +306,7 @@
                 <button class="close-btn" onclick="closePoster(event)">✕</button>
             </div>
 
-            <!-- Poster 11 - Cold 3 -->
+            <!-- Poster 11 -->
             <div class="poster-full" id="poster11" style="display: none;">
                 <div class="poster-vertical" id="fullPoster11">
                     <img src="CoffeeMenuCardM.png" alt="Poster Background" class="poster-bg-vertical">
@@ -344,7 +315,7 @@
                 <button class="close-btn" onclick="closePoster(event)">✕</button>
             </div>
 
-            <!-- Poster 12 - Cold 4 -->
+            <!-- Poster 12 -->
             <div class="poster-full" id="poster12" style="display: none;">
                 <div class="poster-vertical" id="fullPoster12">
                     <img src="CoffeeMenuCardK.png" alt="Poster Background" class="poster-bg-vertical">
@@ -353,7 +324,7 @@
                 <button class="close-btn" onclick="closePoster(event)">✕</button>
             </div>
 
-            <!-- Poster 13 - Cold 5 -->
+            <!-- Poster 13 -->
             <div class="poster-full" id="poster13" style="display: none;">
                 <div class="poster-vertical" id="fullPoster13">
                     <img src="CoffeeMenuCardP.png" alt="Poster Background" class="poster-bg-vertical">
@@ -362,7 +333,7 @@
                 <button class="close-btn" onclick="closePoster(event)">✕</button>
             </div>
 
-            <!-- Poster 14 - Cold 6 -->
+            <!-- Poster 14 -->
             <div class="poster-full" id="poster14" style="display: none;">
                 <div class="poster-vertical" id="fullPoster14">
                     <img src="CoffeeMenuCardCH.png" alt="Poster Background" class="poster-bg-vertical">
@@ -371,7 +342,7 @@
                 <button class="close-btn" onclick="closePoster(event)">✕</button>
             </div>
 
-            <!-- Poster 15 - Cold 7 -->
+            <!-- Poster 15 -->
             <div class="poster-full" id="poster15" style="display: none;">
                 <div class="poster-vertical" id="fullPoster15">
                     <img src="CoffeeMenuCardID.png" alt="Poster Background" class="poster-bg-vertical">
@@ -380,7 +351,7 @@
                 <button class="close-btn" onclick="closePoster(event)">✕</button>
             </div>
 
-            <!-- Poster 16 - Cold 8 -->
+            <!-- Poster 16 -->
             <div class="poster-full" id="poster16" style="display: none;">
                 <div class="poster-vertical" id="fullPoster16">
                     <img src="CoffeeMenuCardIL.png" alt="Poster Background" class="poster-bg-vertical">
@@ -389,7 +360,7 @@
                 <button class="close-btn" onclick="closePoster(event)">✕</button>
             </div>
 
-            <!-- Poster 17 - Cold 9 -->
+            <!-- Poster 17 -->
             <div class="poster-full" id="poster17" style="display: none;">
                 <div class="poster-vertical" id="fullPoster17">
                     <img src="CoffeeMenuCardSG.png" alt="Poster Background" class="poster-bg-vertical">
@@ -398,7 +369,7 @@
                 <button class="close-btn" onclick="closePoster(event)">✕</button>
             </div>
 
-            <!-- Poster 18 - Cold 10 -->
+            <!-- Poster 18 -->
             <div class="poster-full" id="poster18" style="display: none;">
                 <div class="poster-vertical" id="fullPoster18">
                     <img src="CoffeeMenuCardFR.png" alt="Poster Background" class="poster-bg-vertical">

@@ -187,11 +187,42 @@ body::before {
     box-shadow: none;
 }
 
-/* ========== Full Width Button (الجمعات) ========== */
+/* ========== Full Width Button ========== */
 .option-btn-full {
     flex: 1 1 100%;
     max-width: 100%;
     min-width: 100%;
+}
+
+/* ========== Language Button (Top Right) ========== */
+.lang-btn {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 20;
+    font-family: 'DG Agnadeen', sans-serif;
+    font-size: clamp(14px, 2vw, 18px);
+    font-weight: 600;
+    color: #E9E0D0;
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid #E9E0D0;
+    border-radius: 50px;
+    padding: 10px 25px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+    letter-spacing: 0.5px;
+    min-width: auto;
+    max-width: none;
+    flex: none;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.lang-btn:hover {
+    background: #E9E0D0;
+    color: #1a1a1a;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* ========== Pre-order Text ========== */
@@ -312,6 +343,13 @@ body::before {
         max-width: 100%;
     }
 
+    .lang-btn {
+        top: 10px;
+        right: 10px;
+        padding: 8px 18px;
+        font-size: 13px;
+    }
+
     .pre-order-text {
         margin-top: 12px;
         font-size: 11px;
@@ -363,6 +401,13 @@ body::before {
         max-width: 100%;
     }
 
+    .lang-btn {
+        top: 8px;
+        right: 8px;
+        padding: 6px 14px;
+        font-size: 12px;
+    }
+
     .pre-order-text {
         margin-top: 10px;
         font-size: 10px;
@@ -375,5 +420,6 @@ body::before {
 
     .contact-number {
         font-size: 12px;
+        letter-spacing: 1px;
     }
 }

@@ -50,6 +50,31 @@ body::before {
     pointer-events: none;
 }
 
+/* ========== Language Button ========== */
+.lang-btn {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 100;
+    font-family: 'DG Agnadeen', sans-serif;
+    font-size: clamp(14px, 2vw, 18px);
+    font-weight: 600;
+    color: #E9E0D0;
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid #E9E0D0;
+    border-radius: 50px;
+    padding: 10px 25px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+    letter-spacing: 0.5px;
+}
+
+.lang-btn:hover {
+    background: #E9E0D0;
+    color: #1a1a1a;
+}
+
 /* ========== Header ========== */
 .menu-header {
     display: flex;
@@ -236,18 +261,6 @@ body::before {
     margin-bottom: 15px;
 }
 
-.milk-title-en {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    color: #E9E0D0;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 12px;
-    letter-spacing: 2px;
-    opacity: 0.8;
-}
-
 .milk-options-list,
 .milk-options-list-en {
     display: flex;
@@ -268,12 +281,6 @@ body::before {
     font-family: 'DG Agnadeen', sans-serif;
     font-size: 16px;
     color: #E9E0D0;
-}
-
-.milk-options-list-en .milk-name {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 15px;
-    letter-spacing: 1px;
 }
 
 .milk-price {
@@ -480,6 +487,13 @@ body::before {
         grid-template-columns: repeat(2, 1fr);
         gap: 8px;
     }
+
+    .lang-btn {
+        top: 10px;
+        right: 10px;
+        padding: 8px 18px;
+        font-size: 13px;
+    }
 }
 
 /* ========== Mobile ========== */
@@ -495,5 +509,12 @@ body::before {
 
     .back-btn {
         padding: 8px 12px;
+    }
+
+    .lang-btn {
+        top: 8px;
+        right: 8px;
+        padding: 6px 14px;
+        font-size: 12px;
     }
 }
