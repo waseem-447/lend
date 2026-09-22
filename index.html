@@ -35,7 +35,7 @@
             </a>
         </div>
 
-        <!-- ========== Hot Drinks Section ========== -->
+        <!-- ========== Hot Drinks Section (11 Products) ========== -->
         <div class="menu-section">
             <h3 class="section-title" id="hotTitle">المشروبات الساخنة</h3>
             <div class="products-grid">
@@ -80,6 +80,10 @@
                     <img src="CoffeeMenuCardSPL2.png" alt="Product SPL" class="product-square-img">
                 </div>
 
+                <div class="product-square" onclick="openPoster('posterMI')">
+                    <img src="CoffeeMenuCardMI2.png" alt="Product MI" class="product-square-img">
+                </div>
+
             </div>
 
             <!-- Milk Options -->
@@ -102,7 +106,7 @@
             </div>
         </div>
 
-        <!-- ========== Cold Drinks Section ========== -->
+        <!-- ========== Cold Drinks Section (11 Products) ========== -->
         <div class="menu-section">
             <h3 class="section-title" id="coldTitle">المشروبات الباردة</h3>
             <div class="products-grid">
@@ -147,6 +151,10 @@
                     <img src="CoffeeMenuCardFR2.png" alt="Product 10" class="product-square-img">
                 </div>
 
+                <div class="product-square" onclick="openPoster('posterIA')">
+                    <img src="CoffeeMenuCardIA2.png" alt="Product IA" class="product-square-img">
+                </div>
+
             </div>
 
             <!-- Milk Options -->
@@ -182,12 +190,12 @@
             </div>
         </div>
 
-        <!-- ========== Desserts Section (4 Products Only) ========== -->
+        <!-- ========== Desserts Section (7 Products) ========== -->
         <div class="menu-section">
             <h3 class="section-title" id="dessertsTitle">الحلويات</h3>
             <div class="products-grid">
 
-               
+
                 <div class="product-square" onclick="openPoster('posterD2')">
                     <img src="DessertMenuCardCH2.png" alt="Dessert 2" class="product-square-img">
                 </div>
@@ -198,6 +206,18 @@
 
                 <div class="product-square" onclick="openPoster('posterD4')">
                     <img src="DessertMenuCardDO2.png" alt="Dessert 4" class="product-square-img">
+                </div>
+
+                <div class="product-square" onclick="openPoster('posterD5')">
+                    <img src="DessertMenuCardLC2.png" alt="Dessert 5" class="product-square-img">
+                </div>
+
+                <div class="product-square" onclick="openPoster('posterD6')">
+                    <img src="DessertMenuCardEN2.png" alt="Dessert 6" class="product-square-img">
+                </div>
+
+                <div class="product-square" onclick="openPoster('posterD7')">
+                    <img src="DessertMenuCardM2.png" alt="Dessert 7" class="product-square-img">
                 </div>
 
             </div>
@@ -345,6 +365,15 @@
                 <button class="close-btn" onclick="closePoster(event)">✕</button>
             </div>
 
+            <!-- Poster MI -->
+            <div class="poster-full" id="posterMI" style="display: none;">
+                <div class="poster-vertical" id="fullPosterMI">
+                    <img src="CoffeeMenuCardMI.png" alt="BG" class="poster-bg-vertical">
+                    <img src="CoffeeCupMI.png" alt="Cup" class="poster-cup-vertical" id="cupMI">
+                </div>
+                <button class="close-btn" onclick="closePoster(event)">✕</button>
+            </div>
+
             <!-- Cold Drinks Posters 9-18 -->
             <div class="poster-full" id="poster9" style="display: none;">
                 <div class="poster-vertical" id="fullPoster9">
@@ -426,8 +455,22 @@
                 <button class="close-btn" onclick="closePoster(event)">✕</button>
             </div>
 
-            <!-- Desserts Posters (4 Only) -->
-         
+            <!-- Poster IA -->
+            <div class="poster-full" id="posterIA" style="display: none;">
+                <div class="poster-vertical" id="fullPosterIA">
+                    <img src="CoffeeMenuCardIA.png" alt="BG" class="poster-bg-vertical">
+                    <img src="CoffeeCupIA.png" alt="Cup" class="poster-cup-vertical" id="cupIA">
+                </div>
+                <button class="close-btn" onclick="closePoster(event)">✕</button>
+            </div>
+
+            <!-- Desserts Posters (7 Only) -->
+            <div class="poster-full" id="posterD1" style="display: none;">
+                <div class="poster-vertical" id="fullPosterD1">
+                    <img src="DessertMenuCardP.png" alt="Dessert" class="poster-bg-vertical">
+                </div>
+                <button class="close-btn" onclick="closePoster(event)">✕</button>
+            </div>
 
             <div class="poster-full" id="posterD2" style="display: none;">
                 <div class="poster-vertical" id="fullPosterD2">
@@ -446,6 +489,27 @@
             <div class="poster-full" id="posterD4" style="display: none;">
                 <div class="poster-vertical" id="fullPosterD4">
                     <img src="DessertMenuCardDO.png" alt="Dessert" class="poster-bg-vertical">
+                </div>
+                <button class="close-btn" onclick="closePoster(event)">✕</button>
+            </div>
+
+            <div class="poster-full" id="posterD5" style="display: none;">
+                <div class="poster-vertical" id="fullPosterD5">
+                    <img src="DessertMenuCardLC.png" alt="Dessert" class="poster-bg-vertical">
+                </div>
+                <button class="close-btn" onclick="closePoster(event)">✕</button>
+            </div>
+
+            <div class="poster-full" id="posterD6" style="display: none;">
+                <div class="poster-vertical" id="fullPosterD6">
+                    <img src="DessertMenuCardEN.png" alt="Dessert" class="poster-bg-vertical">
+                </div>
+                <button class="close-btn" onclick="closePoster(event)">✕</button>
+            </div>
+
+            <div class="poster-full" id="posterD7" style="display: none;">
+                <div class="poster-vertical" id="fullPosterD7">
+                    <img src="DessertMenuCardM.png" alt="Dessert" class="poster-bg-vertical">
                 </div>
                 <button class="close-btn" onclick="closePoster(event)">✕</button>
             </div>

@@ -198,6 +198,7 @@ function initDraggableCups() {
     initDraggableCup('fullPoster8', 'cup8');
     initDraggableCup('fullPosterA', 'cupA');
     initDraggableCup('fullPosterSPL', 'cupSPL');
+    initDraggableCup('fullPosterMI', 'cupMI');
     
     // Cold drinks
     initDraggableCup('fullPoster9', 'cup9');
@@ -210,6 +211,7 @@ function initDraggableCups() {
     initDraggableCup('fullPoster16', 'cup16');
     initDraggableCup('fullPoster17', 'cup17');
     initDraggableCup('fullPoster18', 'cup18');
+    initDraggableCup('fullPosterIA', 'cupIA');
 }
 
 function initDraggableCup(posterId, cupId) {
