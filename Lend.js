@@ -187,8 +187,7 @@ function closePoster(event) {
 
 // ========== Draggable Cups ==========
 function initDraggableCups() {
-    // Hot drinks
-    initDraggableCup('fullPoster1', 'cup1');
+    // Hot drinks (without poster1 - no cup)
     initDraggableCup('fullPoster2', 'cup2');
     initDraggableCup('fullPoster3', 'cup3');
     initDraggableCup('fullPoster4', 'cup4');
@@ -200,8 +199,7 @@ function initDraggableCups() {
     initDraggableCup('fullPosterSPL', 'cupSPL');
     initDraggableCup('fullPosterMI', 'cupMI');
     
-    // Cold drinks
-    initDraggableCup('fullPoster9', 'cup9');
+    // Cold drinks (without poster9 - no cup)
     initDraggableCup('fullPoster10', 'cup10');
     initDraggableCup('fullPoster11', 'cup11');
     initDraggableCup('fullPoster12', 'cup12');
