@@ -177,27 +177,10 @@
             </div>
         </div>
 
-        <!-- ========== Drinks Section ========== -->
-        <div class="menu-section">
-            <h3 class="section-title" id="drinksTitle">مشروبات</h3>
-            <div class="products-grid">
-                <div class="product-square">
-                    <img src="SparklingWater.png" alt="Sparkling Water" class="product-square-img">
-                </div>
-                <div class="product-square">
-                    <img src="NaturalWater.png" alt="Natural Water" class="product-square-img">
-                </div>
-            </div>
-        </div>
-
         <!-- ========== Desserts Section (9 Products) ========== -->
         <div class="menu-section">
             <h3 class="section-title" id="dessertsTitle">الحلويات</h3>
             <div class="products-grid">
-
-                <div class="product-square" onclick="openPoster('posterD1')">
-                    <img src="DessertMenuCardP2.png" alt="Dessert 1" class="product-square-img">
-                </div>
 
                 <div class="product-square" onclick="openPoster('posterD2')">
                     <img src="DessertMenuCardCH2.png" alt="Dessert 2" class="product-square-img">
@@ -275,6 +258,19 @@
             </div>
         </div>
 
+        <!-- ========== Drinks Section (Last) ========== -->
+        <div class="menu-section">
+            <h3 class="section-title" id="drinksTitle">مشروبات</h3>
+            <div class="products-grid">
+                <div class="product-square">
+                    <img src="SparklingWater.png" alt="Sparkling Water" class="product-square-img">
+                </div>
+                <div class="product-square">
+                    <img src="NaturalWater.png" alt="Natural Water" class="product-square-img">
+                </div>
+            </div>
+        </div>
+
         <!-- ========== Footer Note ========== -->
         <div class="footer-note">
             <p class="footer-ar" id="footerAr">
@@ -293,10 +289,11 @@
     <div class="poster-overlay" id="posterOverlay" onclick="closePoster(event)">
         <div class="poster-overlay-content">
 
-            <!-- Poster 1 - POSTER ONLY (No Cup) -->
+            <!-- Poster 1 -->
             <div class="poster-full" id="poster1" style="display: none;">
                 <div class="poster-vertical" id="fullPoster1">
-                    <img src="بوستر-اليوم-الوطني-لند.png" alt="Poster" class="poster-bg-vertical">
+                    <img src="CoffeeMenuCard.png" alt="BG" class="poster-bg-vertical">
+                    <img src="CoffeeCup.png" alt="Cup" class="poster-cup-vertical" id="cup1">
                 </div>
                 <button class="close-btn" onclick="closePoster(event)">✕</button>
             </div>
@@ -391,10 +388,11 @@
                 <button class="close-btn" onclick="closePoster(event)">✕</button>
             </div>
 
-            <!-- Poster 9 - POSTER ONLY (No Cup) -->
+            <!-- Poster 9 -->
             <div class="poster-full" id="poster9" style="display: none;">
                 <div class="poster-vertical" id="fullPoster9">
-                    <img src="بوستر-اليوم-الوطني-لند.png" alt="Poster" class="poster-bg-vertical">
+                    <img src="CoffeeMenuCardB.png" alt="BG" class="poster-bg-vertical">
+                    <img src="CoffeeCupB.png" alt="Cup" class="poster-cup-vertical" id="cup9">
                 </div>
                 <button class="close-btn" onclick="closePoster(event)">✕</button>
             </div>
