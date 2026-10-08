@@ -51,6 +51,46 @@ body::before {
     pointer-events: none;
 }
 
+/* ========== Poster Wrapper ========== */
+.poster-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(85vw, 550px);
+    max-height: min(95vh, 900px);
+    aspect-ratio: 1080 / 1440;
+    z-index: 2000;
+    border-radius: clamp(12px, 2vw, 22px);
+    box-shadow: 0 0 40px 15px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    transition: opacity 0.8s ease;
+    cursor: pointer;
+}
+
+.poster-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    box-shadow: inset 0 0 30px 10px rgba(0, 0, 0, 0.5);
+    border-radius: clamp(12px, 2vw, 22px);
+}
+
+.poster-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
 /* ========== Logo ========== */
 .logo-container {
     position: fixed;
@@ -60,7 +100,7 @@ body::before {
     text-align: center;
     transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 100;
-    opacity: 1;
+    opacity: 0;
     pointer-events: none;
 }
 
@@ -69,6 +109,7 @@ body::before {
     height: clamp(50px, 10vw, 80px);
     object-fit: contain;
     display: block;
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ========== Language Button ========== */

@@ -23,6 +23,7 @@ const welcomeMessagesEN = [
 
 // ========== State ==========
 let currentLang = localStorage.getItem('lendLang') || 'ar';
+let posterDismissed = false;
 
 // ========== Language ==========
 function applyLanguage() {
@@ -79,19 +80,48 @@ function toggleLanguage() {
     applyLanguage();
 }
 
-// ========== Initialize ==========
+// ========== Poster Click ==========
 document.addEventListener('DOMContentLoaded', () => {
+    const posterWrapper = document.getElementById('posterWrapper');
     const logoContainer = document.getElementById('logoContainer');
+    const mainContent = document.getElementById('mainContent');
     const langBtn = document.getElementById('langBtn');
 
-    // Show logo with animation
-    if (logoContainer) {
-        logoContainer.style.opacity = '1';
+    if (posterWrapper) {
+        posterWrapper.addEventListener('click', revealContent);
+        posterWrapper.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            revealContent();
+        }, { passive: false });
     }
 
-    applyLanguage();
+    function revealContent() {
+        if (posterDismissed) return;
+        posterDismissed = true;
 
-    // Language button
+        posterWrapper.style.opacity = '0';
+        setTimeout(() => {
+            posterWrapper.style.display = 'none';
+        }, 800);
+
+        logoContainer.style.opacity = '1';
+
+        mainContent.style.display = 'block';
+        if (langBtn) langBtn.style.display = 'block';
+
+        applyLanguage();
+
+        mainContent.style.opacity = '0';
+        mainContent.style.transition = 'opacity 1s ease';
+        setTimeout(() => {
+            mainContent.style.opacity = '1';
+        }, 100);
+
+        initFlipCards();
+        initDraggableCups();
+        initInactivityTimer();
+    }
+
     if (langBtn) {
         langBtn.addEventListener('click', toggleLanguage);
         langBtn.addEventListener('touchstart', (e) => {
@@ -99,11 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleLanguage();
         }, { passive: false });
     }
-
-    // Init all features
-    initFlipCards();
-    initDraggableCups();
-    initInactivityTimer();
 });
 
 // ========== Flip Cards ==========
@@ -162,7 +187,8 @@ function closePoster(event) {
 
 // ========== Draggable Cups ==========
 function initDraggableCups() {
-    // Hot drinks (without poster1 - no cup)
+    // Hot drinks
+    initDraggableCup('fullPoster1', 'cup1');
     initDraggableCup('fullPoster2', 'cup2');
     initDraggableCup('fullPoster3', 'cup3');
     initDraggableCup('fullPoster4', 'cup4');
@@ -174,7 +200,8 @@ function initDraggableCups() {
     initDraggableCup('fullPosterSPL', 'cupSPL');
     initDraggableCup('fullPosterMI', 'cupMI');
     
-    // Cold drinks (without poster9 - no cup)
+    // Cold drinks
+    initDraggableCup('fullPoster9', 'cup9');
     initDraggableCup('fullPoster10', 'cup10');
     initDraggableCup('fullPoster11', 'cup11');
     initDraggableCup('fullPoster12', 'cup12');
