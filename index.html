@@ -9,21 +9,21 @@
 </head>
 <body>
 
-    <!-- ========== Poster ========== -->
-    <div class="poster-wrapper" id="posterWrapper">
+    <!-- ========== Poster (DISABLED) ========== -->
+    <div class="poster-wrapper" id="posterWrapper" style="display: none;">
         <img src="بوستر-اليوم-الوطني-لند.png" alt="بوستر" class="poster-bg">
     </div>
 
     <!-- ========== Logo ========== -->
-    <div class="logo-container" id="logoContainer">
+    <div class="logo-container" id="logoContainer" style="opacity: 1;">
         <img src="lend.svg" alt="Lend" class="logo" id="logo">
     </div>
 
     <!-- ========== Language Button ========== -->
-    <button class="lang-btn" id="langBtn" style="display: none;">EN</button>
+    <button class="lang-btn" id="langBtn">EN</button>
 
     <!-- ========== Main Content ========== -->
-    <main class="main-content" id="mainContent" style="display: none;">
+    <main class="main-content" id="mainContent">
 
         <!-- Welcome Message -->
         <div class="welcome-section" id="welcomeSection">
@@ -177,7 +177,7 @@
             </div>
         </div>
 
-        <!-- ========== Desserts Section ========== -->
+        <!-- ========== Desserts Section (7 Products - Removed CP & LA) ========== -->
         <div class="menu-section">
             <h3 class="section-title" id="dessertsTitle">الحلويات</h3>
             <div class="products-grid">
@@ -204,14 +204,6 @@
 
                 <div class="product-square" onclick="openPoster('posterD7')">
                     <img src="DessertMenuCardM2.png" alt="Dessert 7" class="product-square-img">
-                </div>
-
-                <div class="product-square" onclick="openPoster('posterD8')">
-                    <img src="DessertMenuCardCP2.png" alt="Dessert 8" class="product-square-img">
-                </div>
-
-                <div class="product-square" onclick="openPoster('posterD9')">
-                    <img src="DessertMenuCardLA2.png" alt="Dessert 9" class="product-square-img">
                 </div>
 
             </div>
@@ -487,7 +479,7 @@
                 <button class="close-btn" onclick="closePoster(event)">✕</button>
             </div>
 
-            <!-- Desserts Posters -->
+            <!-- Desserts Posters (7 Only) -->
             <div class="poster-full" id="posterD1" style="display: none;">
                 <div class="poster-vertical" id="fullPosterD1">
                     <img src="DessertMenuCardP.png" alt="Dessert" class="poster-bg-vertical">
@@ -533,20 +525,6 @@
             <div class="poster-full" id="posterD7" style="display: none;">
                 <div class="poster-vertical" id="fullPosterD7">
                     <img src="DessertMenuCardM.png" alt="Dessert" class="poster-bg-vertical">
-                </div>
-                <button class="close-btn" onclick="closePoster(event)">✕</button>
-            </div>
-
-            <div class="poster-full" id="posterD8" style="display: none;">
-                <div class="poster-vertical" id="fullPosterD8">
-                    <img src="DessertMenuCardCP.png" alt="Dessert" class="poster-bg-vertical">
-                </div>
-                <button class="close-btn" onclick="closePoster(event)">✕</button>
-            </div>
-
-            <div class="poster-full" id="posterD9" style="display: none;">
-                <div class="poster-vertical" id="fullPosterD9">
-                    <img src="DessertMenuCardLA.png" alt="Dessert" class="poster-bg-vertical">
                 </div>
                 <button class="close-btn" onclick="closePoster(event)">✕</button>
             </div>
