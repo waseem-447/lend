@@ -23,7 +23,6 @@ const welcomeMessagesEN = [
 
 // ========== State ==========
 let currentLang = localStorage.getItem('lendLang') || 'ar';
-let posterDismissed = false;
 
 // ========== Language ==========
 function applyLanguage() {
@@ -53,6 +52,8 @@ function applyLanguage() {
     if (drinksTitle) drinksTitle.textContent = isAr ? 'مشروبات' : 'Drinks';
     if (dessertsTitle) dessertsTitle.textContent = isAr ? 'الحلويات' : 'Desserts';
     if (gatheringTitle) gatheringTitle.textContent = isAr ? 'الجمعات' : 'Gathering';
+
+    updateCropsLanguage();
     if (milkTitle) milkTitle.textContent = isAr ? 'إضافة أنواع الحليب للمشروبات' : 'Milk Options';
     if (milkTitleCold) milkTitleCold.textContent = isAr ? 'إضافة أنواع الحليب للمشروبات' : 'Milk Options';
 
@@ -80,47 +81,13 @@ function toggleLanguage() {
     applyLanguage();
 }
 
-// ========== Poster Click ==========
+// ========== Init ==========
 document.addEventListener('DOMContentLoaded', () => {
-    const posterWrapper = document.getElementById('posterWrapper');
-    const logoContainer = document.getElementById('logoContainer');
-    const mainContent = document.getElementById('mainContent');
     const langBtn = document.getElementById('langBtn');
 
-    if (posterWrapper) {
-        posterWrapper.addEventListener('click', revealContent);
-        posterWrapper.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            revealContent();
-        }, { passive: false });
-    }
-
-    function revealContent() {
-        if (posterDismissed) return;
-        posterDismissed = true;
-
-        posterWrapper.style.opacity = '0';
-        setTimeout(() => {
-            posterWrapper.style.display = 'none';
-        }, 800);
-
-        logoContainer.style.opacity = '1';
-
-        mainContent.style.display = 'block';
-        if (langBtn) langBtn.style.display = 'block';
-
-        applyLanguage();
-
-        mainContent.style.opacity = '0';
-        mainContent.style.transition = 'opacity 1s ease';
-        setTimeout(() => {
-            mainContent.style.opacity = '1';
-        }, 100);
-
-        initFlipCards();
-        initDraggableCups();
-        initInactivityTimer();
-    }
+    applyLanguage();
+    initFlipCards();
+    initDraggableCups();
 
     if (langBtn) {
         langBtn.addEventListener('click', toggleLanguage);
@@ -317,4 +284,35 @@ function initInactivityTimer() {
     });
 
     resetInactivityTimer();
+}
+
+// ========== Scroll Pop-in ==========
+function initScrollPop() {
+    const cards = document.querySelectorAll('.main-content .product-square, .main-content .flip-card');
+    if (!('IntersectionObserver' in window)) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('popped');
+            observer.unobserve(entry.target);
+        });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    cards.forEach(card => {
+        const index = Array.from(card.parentElement.children).indexOf(card);
+        card.style.transitionDelay = '0s, ' + (index % 5) * 0.07 + 's, ' + (index % 5) * 0.07 + 's';
+        card.classList.add('pop-ready');
+        observer.observe(card);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initScrollPop);
+
+// ========== Crops Language ==========
+function updateCropsLanguage() {
+    const isAr = currentLang === 'ar';
+    const cropsTitle = document.getElementById('cropsTitle');
+    if (cropsTitle) cropsTitle.textContent = isAr ? 'المحاصيل' : 'Crops';
+    document.body.classList.toggle('crops-en', !isAr);
 }
