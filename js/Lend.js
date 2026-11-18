@@ -81,13 +81,56 @@ function toggleLanguage() {
     applyLanguage();
 }
 
-// ========== Init ==========
+// ========== Init + Welcome Poster ==========
 document.addEventListener('DOMContentLoaded', () => {
+    const posterWrapper = document.getElementById('posterWrapper');
+    const logoContainer = document.getElementById('logoContainer');
+    const mainContent = document.getElementById('mainContent');
     const langBtn = document.getElementById('langBtn');
+    let posterDismissed = false;
 
-    applyLanguage();
-    initFlipCards();
-    initDraggableCups();
+    function startMenu() {
+        applyLanguage();
+        initFlipCards();
+        initDraggableCups();
+        initInactivityTimer();
+    }
+
+    function revealContent() {
+        if (posterDismissed) return;
+        posterDismissed = true;
+
+        posterWrapper.style.opacity = '0';
+        setTimeout(() => {
+            posterWrapper.style.display = 'none';
+        }, 800);
+
+        if (logoContainer) logoContainer.style.opacity = '1';
+        if (langBtn) langBtn.style.display = 'block';
+
+        mainContent.style.opacity = '0';
+        mainContent.style.transition = 'opacity 1s ease';
+        mainContent.style.display = 'block';
+        setTimeout(() => {
+            mainContent.style.opacity = '1';
+        }, 100);
+
+        startMenu();
+    }
+
+    if (posterWrapper) {
+        posterWrapper.addEventListener('click', revealContent);
+        posterWrapper.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            revealContent();
+        }, { passive: false });
+    } else {
+        // No poster: show the menu right away
+        if (logoContainer) logoContainer.style.opacity = '1';
+        if (langBtn) langBtn.style.display = 'block';
+        mainContent.style.display = 'block';
+        startMenu();
+    }
 
     if (langBtn) {
         langBtn.addEventListener('click', toggleLanguage);
